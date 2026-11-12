@@ -62,7 +62,7 @@ body { margin: 0; min-height: 100vh; }
 .square:has(.piece) .move-dot { width: 90%; height: 90%; background: transparent; border: 5px solid #25372740; }
 .square.in-check:after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, #e4483d9a 0, #e4483d50 45%, transparent 75%); z-index: 0; }
 .coordinates { position: absolute; display: flex; justify-content: space-around; color: #85877e; font-size: 9px; font-weight: 600; }
-.coordinates-left { top: 0; bottom: 18px; left: 2px; }
+.coordinates-left { top: 0; bottom: 18px; left: 2px; flex-direction: column; align-items: center; }
 .coordinates-bottom { left: 18px; right: 0; bottom: 0; }
 .board-note { padding: 5px 0 0 18px; color: #898a81; font-size: 10px; display: flex; justify-content: space-between; }
 .local-note { font-size: 9px; }

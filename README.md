@@ -16,9 +16,9 @@ La partida se guarda automáticamente en el almacenamiento local del navegador y
 
 ## Partidas en línea
 
-En el botón de modo de juego, elige **Jugar en línea**. Una persona crea una sala y comparte el código con la otra; quien crea la sala juega con blancas y quien se une con negras. Las jugadas se validan en ambos dispositivos. No se necesita cuenta.
+En el botón de modo de juego, elige **Jugar en línea**. Una persona crea una sala y comparte el enlace de invitación; al abrirlo, la otra persona verá el código listo para unirse. Quien crea la sala juega con blancas y quien se une con negras. Si se corta el canal de juego, el invitado puede reconectarse mientras el anfitrión mantenga abierta la sala; el tablero y las jugadas se sincronizan de nuevo. Las jugadas se validan en ambos dispositivos. No se necesita cuenta.
 
-La conexión usa WebRTC con PeerJS Cloud como servicio de señalización. La señalización ayuda a encontrar el otro dispositivo; las jugadas se envían directamente entre navegadores cuando la red lo permite. Ambos jugadores necesitan internet. Algunas redes restrictivas pueden impedir la conexión; esta versión no incluye servidor TURN ni reconexión. Las partidas en línea no se guardan para retomarlas.
+La conexión usa WebRTC con PeerJS Cloud como servicio de señalización. La señalización ayuda a encontrar el otro dispositivo; las jugadas se envían directamente entre navegadores cuando la red lo permite. Ambos jugadores necesitan internet. Algunas redes restrictivas pueden impedir la conexión porque esta versión no incluye un servidor TURN. Las partidas en línea no se guardan para retomarlas después de cerrar la sala.
 
 ## Publicar en GitHub Pages
 

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="Una partida de ajedrez, a tu ritmo. Juega en el mismo dispositivo.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Tablero — Ajedrez</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Tablero, inicio"><span class="brand-mark">♞</span><span>tablero<span class="brand-period">.</span></span></a>
+      <button class="mode-tag" id="mode-toggle" type="button" title="Cambiar el modo de juego"><span class="live-dot"></span> PARTIDA LOCAL</button>
+      <button class="icon-button help-button" id="help-button" aria-label="Cómo jugar" title="Cómo jugar">?</button>
+    </header>
+
+    <section class="game-layout" aria-label="Partida de ajedrez">
+      <div class="play-area">
+        <div class="player-card opponent" id="black-player">
+          <div class="avatar black-avatar" id="black-avatar">♚</div>
+          <div class="player-info"><strong id="black-name">Negras</strong><span id="black-caption">Esperando su turno</span></div>
+          <div class="player-clock" id="black-clock">—</div>
+        </div>
+
+        <div class="board-wrap">
+          <div class="coordinates coordinates-left" id="rank-labels" aria-hidden="true"></div>
+          <div class="board" id="board" role="grid" aria-label="Tablero de ajedrez"></div>
+          <div class="coordinates coordinates-bottom" id="file-labels" aria-hidden="true"></div>
+        </div>
+
+        <div class="player-card current-player" id="white-player">
+          <div class="avatar white-avatar">♔</div>
+          <div class="player-info"><strong>Blancas <span class="you-tag">TÚ</span></strong><span id="white-caption">Tu turno</span></div>
+          <div class="player-clock" id="white-clock">—</div>
+        </div>
+        <p class="board-note"><span class="keyboard-hint">Toca una pieza y después su destino</span><span class="local-note">♙ &nbsp; 2 jugadores · mismo dispositivo</span></p>
+      </div>
+
+      <aside class="side-panel">
+        <div class="game-heading"><span class="eyebrow">TU MESA DE JUEGO</span><h1>Una partida,<br><em>a tu ritmo.</em></h1><p>Un tablero tranquilo para pensar cada movimiento.</p></div>
+        <div class="turn-card" id="turn-card"><span class="turn-indicator" id="turn-indicator">♙</span><div><span class="turn-label">ES EL TURNO DE</span><strong id="turn-title">Las blancas</strong></div><span class="turn-status" id="turn-status">En curso</span></div>
+        <div class="section-heading"><span>Movimientos</span><span id="move-count" class="move-count">0 jugadas</span></div>
+        <div class="move-list" id="move-list"><div class="empty-moves"><span>♙</span><p>Tu primera jugada<br>empieza aquí.</p></div></div>
+        <div class="action-row">
+          <button class="action-button secondary" id="undo-button" disabled><span class="action-icon">↶</span> Deshacer</button>
+          <button class="action-button secondary" id="flip-button"><span class="action-icon flip-icon">⇵</span> Girar</button>
+          <button class="action-button primary" id="new-game-button"><span>＋</span> Nueva partida</button>
+        </div>
+        <p class="panel-footer">SIN PRISA, SIN PUNTUACIÓN. SOLO AJEDREZ.</p>
+      </aside>
+    </section>
+    <footer class="page-footer"><span>HECHO PARA JUGAR SIN PRISA</span><span>♞ &nbsp; BUENA PARTIDA.</span></footer>
+  </main>
+
+  <dialog id="promotion-dialog" class="modal promotion-modal"><form method="dialog"><span class="eyebrow">PROMOCIÓN</span><h2>¿En qué pieza?</h2><p>Tu peón llegó al final del tablero.</p><div class="promotion-options" id="promotion-options"></div></form></dialog>
+  <dialog id="confirm-dialog" class="modal"><form method="dialog"><span class="eyebrow" id="confirm-eyebrow">NUEVA PARTIDA</span><h2 id="confirm-title">¿Empezamos de nuevo?</h2><p id="confirm-message">La partida actual y sus movimientos se borrarán.</p><div class="bot-settings" id="bot-settings" hidden><label>Dificultad<select id="bot-difficulty"><option value="beginner">Inicio</option><option value="intermediate" selected>Intermedio</option><option value="advanced">Avanzado</option></select></label><label>Tiempo de respuesta<select id="bot-delay"><option value="1000">1 segundo</option><option value="2000" selected>2 segundos</option><option value="3000">3 segundos</option></select></label></div><div class="modal-actions"><button class="action-button secondary" value="cancel">Seguir jugando</button><button class="action-button primary" id="confirm-accept" value="confirm">Nueva partida</button></div></form></dialog>
+  <dialog id="help-dialog" class="modal"><form method="dialog"><span class="eyebrow">BIENVENIDO/A AL TABLERO</span><h2>Un juego para compartir.</h2><p>Jueguen por turnos en el mismo dispositivo. Toca una pieza para ver sus movimientos posibles y elige una casilla.</p><p>Toca <strong>Partida local</strong> en la parte superior para jugar contra el bot. La partida se guarda en este dispositivo para que puedas retomarla después.</p><div class="modal-tools"><button class="action-button secondary" id="sound-toggle" type="button">Sonidos: desactivados</button><button class="action-button secondary" id="install-button" type="button">Instalar app</button></div><p id="install-note" class="install-note" hidden></p><div class="modal-actions"><span></span><button class="action-button primary" value="close">¡A jugar!</button></div></form></dialog>
+  <script src="app.js"></script>
+</body>
+</html>

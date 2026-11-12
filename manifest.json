@@ -1,0 +1,16 @@
+{
+  "name": "Tablero — Ajedrez",
+  "short_name": "Tablero",
+  "description": "Una partida de ajedrez, a tu ritmo.",
+  "lang": "es",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f6f2",
+  "theme_color": "#f7f6f2",
+  "icons": [
+    {"src":"icon.svg","sizes":"192x192 512x512","type":"image/svg+xml","purpose":"any maskable"},
+    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}

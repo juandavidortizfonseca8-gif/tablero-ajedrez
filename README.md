@@ -31,8 +31,9 @@ El sitio es público. Con GitHub Free, el repositorio también debe ser público
 - Reglas de movimiento, jaque, mate, tablas, enroque, captura al paso y promoción.
 - Historial de jugadas, deshacer la última jugada y girar el tablero.
 - Modo contra bot con búsqueda de movimientos, respuesta a amenazas y elección de jugadas legales.
-- Partidas en línea entre dos dispositivos mediante salas privadas por código.
-- Stockfish 19 Lite con tres niveles de fuerza y una espera mínima configurable de 1, 2 o 3 segundos antes de cada respuesta.
+- Partidas en línea entre dos dispositivos mediante salas privadas por código, con reloj compartido, ofertas de tablas y abandono.
+- Stockfish 19 Lite con tres niveles de fuerza; el nivel avanzado calcula y responde en aproximadamente 0,5 segundos.
+- Relojes opcionales de 3, 5 o 10 minutos, incrementos configurables, ofertas de tablas y abandono.
 - Diseño adaptable con controles táctiles y opción de instalación.
 
 ## Licencia del motor

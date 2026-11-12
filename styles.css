@@ -43,6 +43,7 @@ body { margin: 0; min-height: 100vh; }
 .player-info > span { font-size: 10px; color: var(--muted); }
 .you-tag { background: #e6eadf; color: #52664e; border-radius: 3px; font-size: 8px; letter-spacing: .7px; padding: 3px 5px; margin-left: 5px; vertical-align: 2px; }
 .player-clock { margin-left: auto; color: #72746b; font-size: 12px; font-variant-numeric: tabular-nums; letter-spacing: .7px; }
+.player-clock.low-time { color: #a25335; }
 .current-player.is-active .player-clock, .opponent.is-active .player-clock { color: var(--green); font-weight: 600; }
 
 .board-wrap { position: relative; padding-left: 18px; padding-bottom: 18px; }
@@ -98,6 +99,9 @@ body { margin: 0; min-height: 100vh; }
 .action-button.primary:hover { background: var(--green-dark); }
 .action-icon { font-size: 15px; vertical-align: -1px; margin-right: 3px; }
 .flip-icon { font-size: 14px; }
+.game-control-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+.game-control-row[hidden] { display: none; }
+.game-control-row .action-button { width: 100%; }
 .panel-footer { font-size: 8px; letter-spacing: 1.25px; color: #a0a097; text-align: center; margin: 20px 0 0; }
 .page-footer { height: 57px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; font-size: 8px; letter-spacing: 1.2px; color: #96968c; }
 
@@ -116,6 +120,11 @@ body { margin: 0; min-height: 100vh; }
 .bot-settings[hidden] { display: none; }
 .bot-settings label { display: grid; gap: 6px; color: #777a70; font-size: 10px; }
 .bot-settings select { width: 100%; height: 36px; border: 1px solid var(--line); border-radius: 4px; background: #fbfaf7; color: var(--ink); padding: 0 8px; font: 500 11px 'DM Sans', sans-serif; }
+.clock-settings { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+.clock-settings[hidden] { display: none; }
+.clock-settings label { display: grid; gap: 6px; color: #777a70; font-size: 10px; }
+.clock-settings select { width: 100%; height: 36px; border: 1px solid var(--line); border-radius: 4px; background: #fbfaf7; color: var(--ink); padding: 0 8px; font: 500 11px 'DM Sans', sans-serif; }
+.clock-settings small { grid-column: 1 / -1; color: #85877e; font-size: 9px; }
 .mode-options { display: grid; gap: 8px; margin-top: 18px; }
 .mode-options .action-button { width: 100%; height: 42px; text-align: left; padding: 0 14px; }
 .online-controls { display: grid; gap: 9px; margin-top: 18px; }
